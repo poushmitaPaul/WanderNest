@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const methodOverride = require('method-override');
 const ejsMate = require('ejs-mate');
+const session = require('express-session');
 
 const listings = require('./routes/listing.js');
 const reviews = require('./routes/review.js');

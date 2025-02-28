@@ -1,6 +1,7 @@
-# Wanderlust (MERN Stack)
+# WanderNest (MERN Stack)
 
-A full-stack Airbnb clone built using the MERN (MongoDB, Express.js, React, Node.js) stack. This project allows users to browse listings, add new properties, and manage their bookings.
+A full-stack Airbnb clone built using the MERN (MongoDB, Express.js, React, Node.js) stack. This project allows users to browse listings , 
+add new properties, giving reviews.
 
 ## Features
 - View all available property listings

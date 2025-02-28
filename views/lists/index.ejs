@@ -1,6 +1,6 @@
 <% layout('/layouts/boilerplate') -%>
 <body>
-    <h3>All Lists</h3>
+    <h3 class="mt-4 mb-4">All Listings</h3>
 
     <!-- <form method="get" action="/listings/new">
         <button>Create New List</button>
@@ -11,7 +11,7 @@
             <a href="/listings/<%= list.id %> " class="listing-link"> 
                 <div class="card col listing-card">
                     <img 
-                        src="<%= list.image %>" 
+                        src="<%= list.image.url %>" 
                         class="card-img-top" 
                         alt="listing-img"
                         type="url"

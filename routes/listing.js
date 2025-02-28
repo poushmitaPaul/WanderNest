@@ -9,6 +9,7 @@ const {listingSchema} = require("../schema.js");
 router.get('/listings', async (req, res) => {
     let lists = await Listing.find();
     res.render('lists/index.ejs', {lists});
+    
 })
 
 // New Route //

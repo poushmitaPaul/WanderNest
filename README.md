@@ -17,7 +17,6 @@ add new properties, giving reviews.
 - **Other**: Cloudinary (for image uploads), JWT authentication
 
 ## Installation
-
 ### Prerequisites
 Ensure you have the following installed:
 - Node.js

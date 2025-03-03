@@ -1,13 +1,14 @@
 const express = require('express');
-const router = express.Router();
+const router = express.Router({mergeParams:true});
 const User = require('../models/user.js');
 const passport = require('passport');
+const wrapAsync = require('../utils/wrapAsync.js');
 
 
 router.get('/signup', (req, res) => {
     res.render('users/signup.ejs');
 });
-router.post('/signup', async (req, res) => {    // async --> wrapAsync
+router.post('/signup', async(req, res) => {    // async --> wrapAsync
     try {
         let {username, email, password} = req.body;
 
@@ -18,7 +19,7 @@ router.post('/signup', async (req, res) => {    // async --> wrapAsync
         res.redirect('/listings');
         
     } catch (e) {
-        req.flash('error', e.message );
+        req.flash('error', e.message);
         res.redirect('/signup');
     }
     // it is still didn't throwing error for entering same username

@@ -22,6 +22,7 @@ router.post('/listings', async (req, res) => {
     // let {id, title, description, image, price, location, country} = req.body;
     let newListing = new Listing(req.body.listing);
     await newListing.save();
+    req.flash('success', 'New Listing Created!');    // req.flash('key', 'value/message' )
     res.redirect('/listings');
 })
 

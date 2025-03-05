@@ -7,20 +7,20 @@
     </form> -->
 
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-        <% for(let list of lists){ %>
-            <a href="/listings/<%= list.id %> " class="listing-link"> 
+        <% for(let listing of listings){ %>
+            <a href="/listings/<%= listing.id %> " class="listing-link"> 
                 <div class="card col listing-card">
                     <img 
-                        src="<%= list.image.url %>" 
+                        src="<%= listing.image.url %>" 
                         class="card-img-top" 
                         alt="listing-img"
                         type="url"
                     >
                     <div class="card-img-overlay"></div>
                     <div class="card-body">
-                        <h6> <b> <%= list.title %> </b> </h6>
+                        <h6> <b> <%= listing.title %> </b> </h6>
                         <p class="card-text">
-                            &#8377; <%= list.price %>/night 
+                            &#8377; <%= listing.price %>/night 
                         </p>
                     </div>
                 </div>

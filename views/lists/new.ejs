@@ -4,10 +4,10 @@
         <div class="col-8 offset-2">
             <br/><br/>
             <h2>Create New List</h2>
-            <form method="post" action="/listings">
+            <form method="post" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
-                    <input name="listing[title]" class="form-control" type="text">
+                    <input name="listing[title]" class="form-control" type="text" required>
                     <div class="valid-feedback">
                        Title Looks Good !!
                     </div>
@@ -16,18 +16,22 @@
                     <label for="description" class="form-label">Description</label>
                     <textarea name="listing[description]" rows="10" cols="20" class="form-control"></textarea>
                 </div>
+                <!-- <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input name="listing[image.url]" class="form-control" type="url" required>
+                </div> -->
                 <div class="mb-3">
                     <label for="image" class="form-label">Image</label>
-                    <input name="listing[image.url]" class="form-control" type="url">
+                    <input name="listing[image]" class="form-control" type="file" >
                 </div>
                 <div class="row">
                     <div class="mb-3 col-md-4">
                         <label for="price" class="form-label">Price</label>
-                        <input name="listing[price]" class="form-control" type="text">
+                        <input name="listing[price]" class="form-control" type="text" required>
                     </div>
                     <div class="mb-3 col-md-8">
                         <label for="location" class="form-label">Location</label>
-                        <input name="listing[location]" class="form-control" type="text">
+                        <input name="listing[location]" class="form-control" type="text" required>
                     </div>
                 </div>
                 <div class="mb-3">

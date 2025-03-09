@@ -4,6 +4,10 @@ const Listing = require('../models/listing.js');
 const {listingSchema} = require("../schema.js");
 const {isLoggedIn, isOwner} = require('../middleware.js');
 
+const multer  = require('multer');
+const {storage} = require("../cloudConfig.js");
+const upload = multer({ storage});
+
 
 // Index Route //
 router.get('/listings', async (req, res) => {
@@ -18,14 +22,24 @@ router.get('/listings/new', isLoggedIn, (req, res) => {
 })
 
 // Create Route //
-router.post('/listings',isLoggedIn, async (req, res) => {
+// router.post('/listings', upload.single('listing[image]'), (req, res, file) => {
+//     res.send(req.file);
+//     // console.log(req.file);  
+// })
+router.post('/listings',isLoggedIn, upload.single('listing[image]'), async (req, res) => {
     // let {id, title, description, image, price, location, country} = req.body;
-    let newListing = new Listing(req.body.listing);
+    
+    let url = req.file.path;
+    let filename = req.file.filename;
+    
+    const newListing = new Listing(req.body.listing);
     newListing.owner = req.user._id;
+    newListing.image = {url, filename};
     await newListing.save();
     req.flash('success', 'New Listing Created!');    // req.flash('key', 'value/message' )
     res.redirect('/listings');
 })
+
 
 // Show Route //
 router.get('/listings/:id', async (req, res) => {

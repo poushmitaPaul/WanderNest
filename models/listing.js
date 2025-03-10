@@ -50,7 +50,12 @@ const listingSchema = new Schema({
     owner:{
         type: Schema.Types.ObjectId,
         ref:"User",
-    }
+    },
+    // category: {  
+    //     type: String,
+    //     enum: ['mountains', 'arctic', 'farms', 'deserts'],
+    //     required: true,
+    // }
 })
 
 const Listing = mongoose.model('Listing', listingSchema);

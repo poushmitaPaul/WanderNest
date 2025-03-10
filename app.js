@@ -88,7 +88,7 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.get('/', (req, res) => {
-    res.render('/listings');
+    res.redirect('/listings');
     // res.send('root is working!!');
 })
 

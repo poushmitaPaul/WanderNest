@@ -87,9 +87,10 @@ passport.deserializeUser(User.deserializeUser());
 
 
 
-// app.get('/', (req, res) => {
-//     res.send('root is working!!');
-// })
+app.get('/', (req, res) => {
+    res.render('/listings');
+    // res.send('root is working!!');
+})
 
 app.use( (req, res, next) => {
     res.locals.sMsg = req.flash('success');
